@@ -1,0 +1,17 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: da18e136-f13b-4bba-a95b-520a87a9e755
+          heroku_app_name: "secure-fjord-48566" #Must be unique in Heroku
+          heroku_email: "jpzhang1999@gmail.com"
