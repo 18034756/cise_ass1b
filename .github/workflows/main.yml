@@ -12,6 +12,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
-          heroku_api_key: da18e136-f13b-4bba-a95b-520a87a9e755
-          heroku_app_name: "secure-fjord-48566" #Must be unique in Heroku
+          heroku_api_key: 7ab40aa2-d7d3-4020-9597-bba72caf3769
+          heroku_app_name: "secure-fjord-18034756" #Must be unique in Heroku
           heroku_email: "jpzhang1999@gmail.com"
+          appdir: "cise_ass1b" # <- This will point to the api folder in your project
+          procfile: "web:node cise_ass1b/server.js

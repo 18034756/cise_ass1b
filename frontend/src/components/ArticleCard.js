@@ -13,7 +13,7 @@ const ArticleCard = (props) => {
                         { article.title }
                     </Link>
                 </h2>
-                <h3>{article.authors}</h3>
+                <h3>{article.author}</h3>
             </div>
         </div>
     )

@@ -12,7 +12,7 @@ import About from './pages/about';
 import NotFoundPage from './pages/404';
 import ShowArticles from './components/ShowArticles';
 import SubmissionForm from './components/SubmissionForm';
-import showArticleDetails from './components/ShowArticleDetails';
+import ShowArticleDetails from './components/ShowArticleDetails';
 import UpdateArticleInfo from './components/UpdateArticleInfo';
 
 
@@ -30,17 +30,19 @@ const App = () =>  {
         </ul>
       <div className="content">
       <Switch>
-        <Route exact path="/" component={Home}/>
+      <Route exact path="/" component={Home}/>
         <Route path="/SearchArticle" component={SearchArticle}/>
         <Route path="/SubmitArticle" component={SubmitArticle}/>
         <Route path="/About" component={About}/>
         <Route exact path="/404" component={NotFoundPage}/>
         <Route exact path='/ShowArticles' component={ShowArticles} />
         <Route path='/create-article' component={SubmissionForm} />
-        <Route path='/show-article/:id' component={showArticleDetails} />
+        <Route path='/show-article/:id' component={ShowArticleDetails} />
         <Route path='/edit-article/:id' component={UpdateArticleInfo} />
         <Redirect to="/" />
       </Switch>
+        
+    
       </div>
       </div>
       </Router>

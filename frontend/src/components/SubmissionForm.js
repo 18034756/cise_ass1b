@@ -78,9 +78,9 @@ class SubmissionForm extends Component {
                                 <p>Author:</p>
                                 <input type='text'
                                     placeholder="author"
-                                    name='authors'
+                                    name='author'
                                     className='form-control'
-                                    value={this.state.authors}
+                                    value={this.state.author}
                                     onChange={this.onChange} />
                             </div>
 
@@ -95,7 +95,7 @@ class SubmissionForm extends Component {
                             </div>
 
                             <div className='form-group'>
-                                <p>Publication_date:</p>
+                                <p>Publication date:</p>
                                 <input type='date'
                                     placeholder="publication_date"
                                     name='publication_date'
@@ -115,7 +115,7 @@ class SubmissionForm extends Component {
                             </div>
 
                             <div className='form-group'>
-                                <p>ClaimedBenefit:</p>
+                                <p>Claimed Benefit:</p>
                                 <input type='text'
                                     placeholder="ClaimedBenefit"
                                     name='ClaimedBenefit'
@@ -125,7 +125,7 @@ class SubmissionForm extends Component {
                             </div>
 
                             <div className='form-group'>
-                                <p>LevelofEvidence:</p>
+                                <p>Level of Evidence:</p>
                                 <input type='text'
                                     placeholder="LevelofEvidence"
                                     name='LevelofEvidence'
@@ -137,6 +137,7 @@ class SubmissionForm extends Component {
                             <input
                                 type="submit"
                                 value="Submit"
+
                             />
               </form>
           </div>

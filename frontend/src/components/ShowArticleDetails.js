@@ -3,22 +3,22 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
 
-class showArticleDetails extends Component {
+class ShowArticleDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      articles: {}
+      article: {}
     };
   }
 
   componentDidMount() {
-    // console.log("Print id: " + this.props.match.params.id);
+     //console.log("Print id: " + this.props.match.params.id);
     axios
       .get('http://localhost:8082/api/articles/'+this.props.match.params.id)
       .then(res => {
         // console.log("Print-showBookDetails-API-response: " + res.data);
         this.setState({
-          articles: res.data
+          article: res.data
         })
       })
       .catch(err => {
@@ -33,15 +33,15 @@ class showArticleDetails extends Component {
         this.props.history.push("/");
       })
       .catch(err => {
-        console.log("Error form ShowBookDetails_deleteClick");
+        console.log("Error form ShowArticleDetails_deleteClick");
       })
   };
 
 
   render() {
 
-    const articles = this.state.articles;
-    let articleItem = <div>
+    const article = this.state.article;
+    let ArticleItem = <div>
       <table className="table table-hover table-dark">
         {/* <thead>
           <tr>
@@ -55,37 +55,37 @@ class showArticleDetails extends Component {
           <tr>
             <th scope="row">1</th>
             <td>Title</td>
-            <td>{ articles.title }</td>
+            <td>{ article.title }</td>
           </tr>
           <tr>
             <th scope="row">2</th>
             <td>Author</td>
-            <td>{ articles.author }</td>
+            <td>{ article.author }</td>
           </tr>
           <tr>
             <th scope="row">3</th>
             <td>Source</td>
-            <td>{ articles.source }</td>
+            <td>{ article.source }</td>
           </tr>
           <tr>
             <th scope="row">4</th>
             <td>Publish date</td>
-            <td>{ articles.published_date }</td>
+            <td>{ article.published_date }</td>
           </tr>
           <tr>
             <th scope="row">5</th>
             <td>DOI</td>
-            <td>{ articles.DOI }</td>
+            <td>{ article.DOI }</td>
           </tr>
           <tr>
             <th scope="row">6</th>
             <td>ClaimedBenefit</td>
-            <td>{ articles.ClaimedBenefit }</td>
+            <td>{ article.ClaimedBenefit }</td>
           </tr>
           <tr>
             <th scope="row">7</th>
             <td>LevelofEvidence</td>
-            <td>{ articles.LevelofEvidence }</td>
+            <td>{ article.LevelofEvidence }</td>
           </tr>
     
         </tbody>
@@ -98,7 +98,7 @@ class showArticleDetails extends Component {
           <div className="row">
             <div className="col-md-10 m-auto">
               <br /> <br />
-              <Link to="/ShowArticles" className="btn btn-outline-warning float-left">
+              <Link to="/ShowArticles" >
                   Show Article List
               </Link>
             </div>
@@ -109,16 +109,16 @@ class showArticleDetails extends Component {
             </div>
           </div>
           <div>
-            { articleItem }
+            { ArticleItem }
           </div>
 
           <div className="row">
             <div className="col-md-6">
-              <button type="button" className="btn btn-outline-danger btn-lg btn-block" onClick={this.onDeleteClick.bind(this,articles._id)}>Delete article</button><br />
+              <button type="button" className="btn btn-outline-danger btn-lg btn-block" onClick={this.onDeleteClick.bind(this,article._id)}>Delete article</button><br />
             </div>
 
             <div className="col-md-6">
-              <Link to={`/edit-article/${articles._id}`} className="btn btn-outline-info btn-lg btn-block">
+              <Link to={`/edit-article/${article._id}`} className="btn btn-outline-info btn-lg btn-block">
                     Edit article
               </Link>
               <br />
@@ -135,4 +135,4 @@ class showArticleDetails extends Component {
   }
 }
 
-export default showArticleDetails;
+export default ShowArticleDetails;

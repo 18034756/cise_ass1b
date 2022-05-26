@@ -18,9 +18,9 @@ class UpdateArticleInfo extends Component {
   }
 
   componentDidMount() {
-    // console.log("Print id: " + this.props.match.params.id);
+     //console.log("Print id: " + this.props.match.params.id);
     axios
-      .get('http://localhost:8082/api/books/'+this.props.match.params.id)
+      .get('http://localhost:8082/api/articles/'+this.props.match.params.id)
       .then(res => {
         // this.setState({...this.state, book: res.data})
         this.setState({
@@ -174,7 +174,7 @@ class UpdateArticleInfo extends Component {
               />
             </div>
 
-            <button type="submit" className="btn btn-outline-info btn-lg btn-block">Update article</button>
+            <button type="submit">Update article</button>
             </form>
           </div>
 

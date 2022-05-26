@@ -15,6 +15,7 @@ class ShowArticles extends Component {
     axios
       .get('http://localhost:8082/api/articles')
       .then(res => {
+        this.forceUpdate();
         this.setState({
           articles: res.data
         })
