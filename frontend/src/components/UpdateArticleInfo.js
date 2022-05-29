@@ -20,17 +20,19 @@ class UpdateArticleInfo extends Component {
   componentDidMount() {
     // console.log("Print id: " + this.props.match.params.id);
     axios
-      .get('http://localhost:8082/api/books/'+this.props.match.params.id)
+      .get('http://localhost:8082/api/articles/'+this.props.match.params.id)
       .then(res => {
         // this.setState({...this.state, book: res.data})
+
+        console.log(res.data.title)
         this.setState({
-          title: this.state.title,
-          author: this.state.author,
-          source: this.state.source,
-          publication_date: this.state.publication_date,
-          DOI: this.state.DOI,
-          ClaimedBenefit: this.state.ClaimedBenefit,
-          LevelofEvidence: this.state.LevelofEvidence,
+          title: res.data.title,
+          author: res.data.author,
+          source: res.data.source,
+          publication_date: res.data.publication_date,
+          DOI: res.data.DOI,
+          ClaimedBenefit: res.data.ClaimedBenefit,
+          LevelofEvidence: res.data.LevelofEvidence,
         })
       })
       .catch(err => {

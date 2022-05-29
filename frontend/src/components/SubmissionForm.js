@@ -50,6 +50,7 @@ class SubmissionForm extends Component {
         this.props.history.push('/');
       })
       .catch(err => {
+        console.log(err)
         console.log("Error in CreateArticle!");
       })
   };
@@ -78,9 +79,9 @@ class SubmissionForm extends Component {
                                 <p>Author:</p>
                                 <input type='text'
                                     placeholder="author"
-                                    name='authors'
+                                    name='author'
                                     className='form-control'
-                                    value={this.state.authors}
+                                    value={this.state.author}
                                     onChange={this.onChange} />
                             </div>
 

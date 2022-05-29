@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,NavLink } from 'react-router-dom';
 import '../App.css';
 
 const ArticleCard = (props) => {
@@ -9,11 +9,11 @@ const ArticleCard = (props) => {
         <div className="card-container">
             <div className="desc">
                 <h2>
-                    <Link to={`/show-article/${article._id}`}>
+                    <NavLink to={`/show-article/${article._id}`}>
                         { article.title }
-                    </Link>
+                    </NavLink>
                 </h2>
-                <h3>{article.authors}</h3>
+                <h3>{article.author}</h3>
             </div>
         </div>
     )

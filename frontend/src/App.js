@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   Route,
+  NavLink,
   BrowserRouter as Router,
   Redirect,
   Switch
@@ -22,11 +23,11 @@ const App = () =>  {
       <div>
         <h1>Software Practice Empirical Evidence Database (SPEED)</h1>
         <ul className="header">
-          <li><a href= "/">Home</a></li>
-          <li><a href = "/SearchArticle">Search Article</a></li>
-          <li><a href = "/SubmitArticle">Submit an Article</a></li>
-          <li><a href = "/ShowArticles">Show Articles</a></li>
-          <li><a href = "/About">About Us</a></li>
+          <li><NavLink exact to= "/">Home</NavLink></li>
+          <li><NavLink to = "/SearchArticle">Search Article</NavLink></li>
+          <li><NavLink to = "/SubmitArticle">Submit an Article</NavLink></li>
+          <li><NavLink to = "/ShowArticles">Show Articles</NavLink></li>
+          <li><NavLink to = "/About">About Us</NavLink></li>
         </ul>
       <div className="content">
       <Switch>
@@ -34,11 +35,11 @@ const App = () =>  {
         <Route path="/SearchArticle" component={SearchArticle}/>
         <Route path="/SubmitArticle" component={SubmitArticle}/>
         <Route path="/About" component={About}/>
-        <Route exact path="/404" component={NotFoundPage}/>
-        <Route exact path='/ShowArticles' component={ShowArticles} />
-        <Route path='/create-article' component={SubmissionForm} />
-        <Route path='/show-article/:id' component={showArticleDetails} />
-        <Route path='/edit-article/:id' component={UpdateArticleInfo} />
+        <Route  path="/404" component={NotFoundPage}/>
+        <Route  path='/ShowArticles' component={ShowArticles} />
+        <Route  path='/create-article' component={SubmissionForm} />
+        <Route  path='/show-article/:id' component={showArticleDetails} />
+        <Route  path='/edit-article/:id' component={UpdateArticleInfo} />
         <Redirect to="/" />
       </Switch>
       </div>
