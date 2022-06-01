@@ -15,7 +15,7 @@ class Search extends Component {
         "title": Searchinput
     }
     axios
-      .post('http://localhost:8082/api/articles/search_article',postdate)
+      .post('https://asdasdadasdsaewr.herokuapp.com/api/articles/search_article',postdate)
       .then(res => {
         this.setState({
           articles: res.data
