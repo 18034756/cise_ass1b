@@ -1,19 +1,22 @@
-name: Deploy
-
+name: CI_action
 on:
   push:
-    branches:
-      - main
-
+    branches: [master]
+  pull_request:
+    branches: [master]
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
     steps:
-      - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
-          heroku_api_key: 7ab40aa2-d7d3-4020-9597-bba72caf3769
-          heroku_app_name: "secure-fjord-48566" #Must be unique in Heroku
-          heroku_email: "jpzhang1999@gmail.com"
-          appdir: "cise_ass1b" # <- This will point to the api folder in your project
-          procfile: "web:node cise_ass1b/server.js"
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        working-directory: ./frontend
+        run: npm install
