@@ -13,7 +13,7 @@ class ShowArticles extends Component {
 
   componentDidMount() {
     axios
-      .get('https://secure-fjord-48566.herokuapp.com/api/articles')
+      .get('http://localhost:8082/api/articles')
       .then(res => {
         this.setState({
           articles: res.data

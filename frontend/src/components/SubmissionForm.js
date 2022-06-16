@@ -35,7 +35,7 @@ class SubmissionForm extends Component {
     };
 
     axios
-      .post('https://secure-fjord-48566.herokuapp.com/api/articles', data)
+      .post('http://localhost:8082/api/articles', data)
       .then(res => {
         this.setState({
           title: '',
