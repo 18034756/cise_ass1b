@@ -4,10 +4,10 @@
   "description": "mern app",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "client": "cd client && npm start --prefix client",
-    "heroku-postbuild": "cd client && npm install && npm run build",
-    "start": "nodemon app.js"
+    "heroku-postbuild": "cd client && npm install && npm run-script build",
+    "client": "cd client && npm start --prefix client"
   },
   "repository": {
     "type": "git",
