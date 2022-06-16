@@ -14,7 +14,7 @@ class showArticleDetails extends Component {
   componentDidMount() {
     // console.log("Print id: " + this.props.match.params.id);
     axios
-      .get('https://asdasdadasdsaewr.herokuapp.com/api/articles/'+this.props.match.params.id)
+      .get('https://secure-fjord-48566.herokuapp.com/api/articles/'+this.props.match.params.id)
       .then(res => {
         // console.log("Print-showBookDetails-API-response: " + res.data);
         this.setState({
@@ -28,7 +28,7 @@ class showArticleDetails extends Component {
 
   onDeleteClick (id) {
     axios
-      .delete('https://asdasdadasdsaewr.herokuapp.com/api/articles/'+id)
+      .delete('https://secure-fjord-48566.herokuapp.com/api/articles/'+id)
       .then(res => {
         this.props.history.push("/");
       })
