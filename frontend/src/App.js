@@ -15,7 +15,7 @@ import ShowArticles from './components/ShowArticles';
 import SubmissionForm from './components/SubmissionForm';
 import showArticleDetails from './components/ShowArticleDetails';
 import UpdateArticleInfo from './components/UpdateArticleInfo';
-
+import Button from './components/button';
 
 const App = () =>  {
   return (
@@ -23,6 +23,9 @@ const App = () =>  {
       <div>
         <h1>Software Practice Empirical Evidence Database (SPEED)</h1>
         <ul className="header">
+          <div className="app">
+            <Button label="click me"></Button>
+          </div>
           <li><NavLink exact to= "/">Home</NavLink></li>
           <li><NavLink to = "/SearchArticle">Search Article</NavLink></li>
           <li><NavLink to = "/SubmitArticle">Submit an Article</NavLink></li>
